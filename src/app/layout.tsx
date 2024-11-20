@@ -6,6 +6,9 @@ import BootstrapClient from '@/app/components/BootstrapClient';
 import "./lib/fontawesome";
 import "./globals.css";
 
+import SiteHeader from '@/app/components/SiteHeader';
+import SiteFooter from '@/app/components/SiteFooter';
+
 import { Dr_Sugiyama, Della_Respira, Inter } from 'next/font/google';
 
 const drSugiyama = Dr_Sugiyama({ subsets: ['latin'], weight: '400' });
@@ -25,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="da">
       <body className={inter.className}>
+        <SiteHeader></SiteHeader>
         {children}
+        <SiteFooter></SiteFooter>
       </body>
       <BootstrapClient></BootstrapClient>
     </html>
