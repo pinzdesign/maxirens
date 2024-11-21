@@ -80,7 +80,18 @@ p {
 }
 
 /* layout */
+.servicebox {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 30px;
+ margin-top: 45px;
+}
 
+.servicebox > div {
+  text-align: center;
+  padding: 45px;
+  box-shadow: 8px 8px 0px var(--color-gray);
+}
 
 /* navmenu */
 .navbar {
@@ -146,6 +157,27 @@ p {
   height: 20px;
   vertical-align: baseline;
   margin-right: 5px;
+}
+
+/* color util classes */
+.colorPink {
+  background-color: var(--color-pink);
+}
+
+.colorLightpink {
+  background-color: var(--color-lightpink);
+}
+
+.colorLightblue {
+  background-color: var(--color-lightblue);
+}
+
+.colorDeepblue {
+  background-color: var(--color-deepblue);
+}
+
+.colorGray {
+  background-color: var(--color-gray);
 }
 
 /* forms */
