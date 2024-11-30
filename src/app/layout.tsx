@@ -28,9 +28,15 @@ export default function RootLayout({
   return (
     <html lang="da">
       <body className={inter.className}>
-        <SiteHeader></SiteHeader>
-        {children}
-        <SiteFooter></SiteFooter>
+        <header>
+          <SiteHeader></SiteHeader>
+        </header>
+        <main>
+          {children}
+        </main>
+        <footer>
+          <SiteFooter></SiteFooter>
+        </footer>
       </body>
       <BootstrapClient></BootstrapClient>
     </html>

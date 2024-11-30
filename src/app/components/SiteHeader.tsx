@@ -3,9 +3,9 @@ import Jumbotron from "./Jumbotron";
 
 export default function SiteHeader(){
     return (
-        <header>
+        <>
             <MainMenu></MainMenu>
             <Jumbotron></Jumbotron>
-        </header>
+        </>
     );
 }
