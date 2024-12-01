@@ -155,14 +155,16 @@ a:hover {
   padding: 30px 0;
 }
 
-.valuesRight > ul > li {
+.valuesLeft > ul > li {
   font-size: 20px;
   margin-bottom: 15px;
 }
 
-.img-round {
+.img-round img {
   border-radius: 50%;
   width: 250px;
+  display: block;
+  margin: auto;
 }
 
 footer .container {
@@ -280,6 +282,9 @@ footer .container {
     margin-bottom: 0;
     width: 80vw;
   }
+  .servicebox {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* mobile */
@@ -287,5 +292,8 @@ footer .container {
   .lead {
     font-size: 16px;
     line-height: 30px;
+  }
+  .servicebox {
+    grid-template-columns: 1fr;
   }
 }
