@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface PriceBlock {
     title: string;
-    price: string;
+    price: number;
 }
 
 interface ArticleProps {
@@ -20,7 +20,7 @@ export default function Pricebox({ content }: ArticleProps) {
                             <span className="price" >{item.title}</span>
                         </div>
                         <div className="col-md-4 text-end">
-                            <span className="price" >{item.price}</span>
+                            <span className="price" >{item.price},-</span>
                         </div>
                     </div>
                 ))}
