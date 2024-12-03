@@ -146,6 +146,25 @@ a:hover {
   color: white;
 }
 
+.pricebox {
+  border: 2px solid var(--color-gray);
+  padding: 45px;
+  box-shadow: 8px 8px 0px var(--color-gray);
+}
+
+.price {
+  font-size: 24px;
+  font-family: "Della Respira", sans-serif;
+}
+
+.pricerow {
+  margin-bottom: 15px;
+}
+
+.pricerow:last-child {
+  margin-bottom: 0;
+}
+
 .aboutLeft, .aboutRight {
   padding-left: calc(var(--bs-gutter-x) * .5);
   padding-right: calc(var(--bs-gutter-x) * .5);
@@ -244,6 +263,10 @@ footer .container {
 
 .centered {
   text-align: center;
+}
+
+.alignRight {
+  text-align: right;
 }
 
 /* color util classes */
