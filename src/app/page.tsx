@@ -5,6 +5,7 @@ import ServicePreview from "./components/ServicesPreview";
 import IntroArticle from "./components/IntroArticle";
 import CustomerComment from "./components/CustomerComment";
 import WorkInfo from "./components/WorkInfo";
+import ContactForm from "./components/Contact";
 
 export default function Home() {
   const content = [
@@ -24,6 +25,7 @@ export default function Home() {
             content={content} 
       />
       <CustomerComment></CustomerComment>
+      <ContactForm></ContactForm>
       <WorkInfo></WorkInfo>
     </>
   )

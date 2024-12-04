@@ -8,22 +8,19 @@ import CustomerComment from "../components/CustomerComment";
 import WorkInfo from "../components/WorkInfo";
 import Pricebox from "../components/Pricebox";
 
-// Define the type for a price entry
 interface PriceEntry {
-  id: number; // assuming an ID column exists in the Supabase table
+  id: number;
   title: string;
   price: number;
 }
 
 export default function Home() {
-  // State for price data and loading
   const [priceData, setPriceData] = useState<PriceEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        // TypeScript expects both arguments here: the table name and the type of the data
         const { data, error } = await supabase
           .from("prices")
           .select("*");
@@ -43,7 +40,6 @@ export default function Home() {
     fetchPrices();
   }, []);
 
-  // Distribute prices into 3 boxes
   const distributePrices = (data: PriceEntry[], numBoxes: number): PriceEntry[][] => {
     const boxes = Array.from({ length: numBoxes }, () => [] as PriceEntry[]);
     data.forEach((item, index) => {
