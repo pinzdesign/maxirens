@@ -39,8 +39,8 @@ export default function SiteHeader() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" href={"/kontakt"}>
-                    Kontakt
+                <Link href="#contact" className="nav-link" scroll={true}>
+                  Kontakt
                 </Link>
               </li>
             </ul>

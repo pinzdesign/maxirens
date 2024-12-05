@@ -7,6 +7,7 @@ import IntroArticle from "../components/IntroArticle";
 import CustomerComment from "../components/CustomerComment";
 import WorkInfo from "../components/WorkInfo";
 import Pricebox from "../components/Pricebox";
+import ContactForm from "../components/Contact";
 
 interface PriceEntry {
   id: number;
@@ -79,6 +80,7 @@ export default function Home() {
       </div>
 
       <CustomerComment />
+      <ContactForm></ContactForm>
       <WorkInfo />
     </>
   );

@@ -61,7 +61,7 @@ const ContactForm = () => {
     <div className="container-fluid colorPink">
         <div className="row">
             <div className="col-lg breakerWrap">
-                <h2 className="breaker">Kontakt Os</h2>
+                <h2 className="breaker" id="contact">Kontakt Os</h2>
             </div>
         </div>
     </div>
