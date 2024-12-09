@@ -6,6 +6,7 @@ import IntroArticle from "./components/IntroArticle";
 import CustomerComment from "./components/CustomerComment";
 import WorkInfo from "./components/WorkInfo";
 import ContactForm from "./components/Contact";
+import LoginForm from "./components/LoginForm";
 
 export default function Home() {
   const content = [
