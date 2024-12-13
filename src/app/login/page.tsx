@@ -33,26 +33,26 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-      </form>
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-lg-6 col-md-8 col-sm-10">
+          <h2 className="text-center mb-4">Login</h2>
+          <form onSubmit={handleSubmit} className="p-4 border shadow-sm mb-3">
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email</label>
+              <input type="email" id="email" className="form-control" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">Kodeord</label>
+              <input type="password" id="password" className="form-control" placeholder="Kodeord" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+            </div>
+            <button type="submit" className="btn btn-primary w-100 btnCancel">Login</button>
+            {error && (
+              <p className="text-danger text-center mt-3">{error}</p>
+            )}
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

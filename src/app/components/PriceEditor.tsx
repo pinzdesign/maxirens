@@ -29,7 +29,7 @@ export default function PriceEditor() {
         setPriceData(data || []);
       } catch (err: unknown) {
         if (err instanceof Error) {
-          console.error("Error fetching prices:", err.message);
+          console.error("fejl: ", err.message);
         }
       } finally {
         setIsLoading(false);
@@ -71,7 +71,21 @@ export default function PriceEditor() {
       setCurrentEdit(null);
     } catch (err: unknown) {
       if (err instanceof Error) {
-        console.error("Error updating price:", err.message);
+        console.error("fejl:", err.message);
+      }
+    }
+  };
+
+  const handleDelete = async (id: number) => {
+    try {
+      const { error } = await supabase.from("prices").delete().eq("id", id);
+
+      if (error) throw error;
+
+      setPriceData((prevData) => prevData.filter((item) => item.id !== id));
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.error("fejl:", err.message);
       }
     }
   };
@@ -84,20 +98,22 @@ export default function PriceEditor() {
       title: newTitle,
       price: newPrice,
     };
-  
+
     setPriceData((prevData) => [...prevData, newPriceEntry]);
-  
+
     try {
       const { data, error } = await supabase
         .from("prices")
-        .insert([{
-          title: newTitle,
-          price: newPrice,
-        }])
+        .insert([
+          {
+            title: newTitle,
+            price: newPrice,
+          },
+        ])
         .select();
-  
+
       if (error) {
-        console.error("Error creating new price:", error.message);
+        console.error("fejl:", error.message);
         setPriceData((prevData) => prevData.filter((item) => item.id !== newPriceEntry.id));
         throw error;
       }
@@ -105,9 +121,7 @@ export default function PriceEditor() {
       if (data && data[0] && data[0].id) {
         setPriceData((prevData) =>
           prevData.map((item) =>
-            item.id === newPriceEntry.id
-              ? { ...item, id: data[0].id }
-              : item
+            item.id === newPriceEntry.id ? { ...item, id: data[0].id } : item
           )
         );
       }
@@ -117,15 +131,16 @@ export default function PriceEditor() {
       setNewPrice(0);
     } catch (err: unknown) {
       if (err instanceof Error) {
-        console.error("Error creating new price:", err.message);
+        console.error("fejl:", err.message);
       }
     }
   };
-  
+
   return (
-    <div className="container">
-      <h1>Price List</h1>
-      <button className="btn btn-success mb-3" onClick={() => setShowCreateModal(true)}>Ny Pris</button>
+    <div className="container pricelist">
+      <h2>Pris Liste</h2>
+      <p>Her kan du redigere, oprette nye og slette priser, alle priser bliver fordelt i tre spælter på frontsiden.</p>
+      <button className="btn btn-success mb-3 btnNewprice" onClick={() => setShowCreateModal(true)}>Ny Pris</button>
       {isLoading ? (
         <p>Henter...</p>
       ) : (
@@ -137,10 +152,15 @@ export default function PriceEditor() {
                   <h5>{priceItem.title}</h5>
                 </div>
                 <div className="col-md-3">
-                  <p>${priceItem.price.toFixed(2)}</p>
+                  <p>{priceItem.price.toFixed(2)},-</p>
                 </div>
                 <div className="col-md-3 text-end">
-                  <button className="btn btn-primary" onClick={() => handleEdit(priceItem)}>Rediger</button>
+                  <button className="btn btn-primary btnNewprice" onClick={() => handleEdit(priceItem)}>
+                    Rediger
+                  </button>
+                  <button className="btn btn-danger btnCancel" onClick={() => handleDelete(priceItem.id)}>
+                    Slet
+                  </button>
                 </div>
               </div>
             ))
@@ -149,14 +169,13 @@ export default function PriceEditor() {
           )}
         </>
       )}
-  
       {showEditModal && (
         <div className="modal show" style={{ display: "block" }}>
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Rediger Pris</h5>
-                <button type="button" className="btn-close" onClick={() => setShowEditModal(false)}></button>
+                <button type="button" className="btn-close btnCancel" onClick={() => setShowEditModal(false)}></button>
               </div>
               <div className="modal-body">
                 <div className="mb-3">
@@ -169,8 +188,8 @@ export default function PriceEditor() {
                 </div>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={() => setShowEditModal(false)}>Annuler</button>
-                <button type="button" className="btn btn-primary" onClick={handleSaveChanges}>Gem</button>
+                <button type="button" className="btn btn-secondary btnCancel" onClick={() => setShowEditModal(false)}>Annuler</button>
+                <button type="button" className="btn btn-primary btnNewprice" onClick={handleSaveChanges}>Gem</button>
               </div>
             </div>
           </div>
@@ -183,7 +202,7 @@ export default function PriceEditor() {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Tilføj Ny Pris</h5>
-                <button type="button" className="btn-close" onClick={() => setShowCreateModal(false)} ></button>
+                <button type="button" className="btn-close btnCancel" onClick={() => setShowCreateModal(false)} ></button>
               </div>
               <div className="modal-body">
                 <div className="mb-3">
@@ -196,13 +215,13 @@ export default function PriceEditor() {
                 </div>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={() => setShowCreateModal(false)}>Annuler</button>
-                <button type="button" className="btn btn-primary" onClick={handleCreateNewPrice}>Gem</button>
+                <button type="button" className="btn btn-secondary btnCancel" onClick={() => setShowCreateModal(false)}>Annuler</button>
+                <button type="button" className="btn btn-primary btnNewprice" onClick={handleCreateNewPrice}>Gem</button>
               </div>
             </div>
           </div>
         </div>
       )}
     </div>
-  );  
+  );
 }

@@ -21,32 +21,30 @@ export default function LoginForm() {
 
       if (!res.ok) {
         const { message } = await res.json();
-        setError(message || 'Failed to log in.');
+        setError(message || 'Fejl med login.');
         return;
       }
 
-      router.push('/dashboard'); // Redirect to a protected page
+      router.push('/dashboard');
     } catch (err) {
-      setError('Something went wrong. Please try again.');
+      setError('Fejl med login.');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-      {error && <p>{error}</p>}
-    </form>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-lg-12'>
+          <div className='loginbox'>
+            <form onSubmit={handleSubmit}>
+              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+              <button className='btn-primary btnCancel' type="submit">Login</button>
+              {error && <p>{error}</p>}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

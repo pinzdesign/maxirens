@@ -10,5 +10,5 @@ export default function LogoutButton() {
     router.push('/login'); // Redirect to login page
   };
 
-  return <button onClick={handleLogout}>Logout</button>;
+  return <button className='btn-primary btnCancel float-end' onClick={handleLogout}>Logout</button>;
 }

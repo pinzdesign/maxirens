@@ -13,8 +13,16 @@ export default async function Dashboard() {
 
   return (
     <>
-      <div>Welcome to your Dashboard</div>
-      <LogoutButton />
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-6'>
+            <h2>Dashboard</h2>
+          </div>
+          <div className='col-lg-6'>
+            <LogoutButton />
+          </div>
+        </div>
+      </div>
       <PriceEditor />
     </>
   );
