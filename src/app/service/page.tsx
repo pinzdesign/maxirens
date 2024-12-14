@@ -70,7 +70,7 @@ export default function Home() {
       <div className="container">
         <div className="row">
           {isLoading ? (
-            <p>Loading...</p>
+            <p>Henter...</p>
           ) : (
             priceBoxes.map((content, idx) => (
               <Pricebox key={idx} content={content} />

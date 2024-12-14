@@ -18,6 +18,7 @@ export default function WorkInfo() {
                         <li>Lørdag: 10:00 - 13:00</li>
                         <li>Søndag: Lukket</li>
                     </ul>
+                    <p>Både aflevering og afhentning af tøj sker kun indenfor arbejdstimer på virksomheds adresse, medmindre andet er aftalt.</p>
                 </div>
             </div>
             <div className="col-md-6">
