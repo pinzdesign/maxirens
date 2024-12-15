@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+// @ts-ignore
 import * as bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function CustomerComment() {
