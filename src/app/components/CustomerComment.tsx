@@ -1,8 +1,19 @@
 "use client";
 
-import { Carousel } from 'react-bootstrap';
+import { useEffect, useState } from "react";
+import { Carousel } from "react-bootstrap";
 
 export default function CustomerComment() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []); 
+
+  if (!isClient) {
+    return null; 
+  }
+
   return (
     <div className="container mt-5">
       <Carousel interval={10000} controls>
