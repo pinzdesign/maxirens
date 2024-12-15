@@ -5,9 +5,9 @@ export default function SiteHeader() {
   return (
       <div className="container-fluid navmenu">
         <nav className="navbar fixed-top navbar-expand-md">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" href="/">
             <h1>Maxi Rens</h1>
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
