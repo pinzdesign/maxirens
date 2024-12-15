@@ -24,6 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="da">
+      <BootstrapClient></BootstrapClient>
       <body className={`${inter.className} ${drSugiyama.className} ${dellaRespira.className}`}>
         <header>
           <SiteHeader></SiteHeader>
@@ -35,7 +36,6 @@ export default function RootLayout({
           <SiteFooter></SiteFooter>
         </footer>
       </body>
-      <BootstrapClient></BootstrapClient>
     </html>
   );
 }
