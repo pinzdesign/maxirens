@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-// @ts-ignore
+// @ts-expect-error
 import * as bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Jumbotron() {
