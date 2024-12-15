@@ -29,6 +29,7 @@ export default function LoginPage() {
       router.push('/dashboard');
     } catch (err) {
       setError('Something went wrong. Please try again.');
+      console.log(err);
     }
   };
 
