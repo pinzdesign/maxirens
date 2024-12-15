@@ -1,22 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
+import * as bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function CustomerComment() {
 
-useEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
-        const carouselElement = document.querySelector("#customerCommentCarousel");
-        if (carouselElement) {
-        const bootstrap = require("bootstrap/dist/js/bootstrap.bundle.min.js");
+      const carouselElement = document.querySelector("#customerCommentCarousel");
+      if (carouselElement) {
         new bootstrap.Carousel(carouselElement, {
-            interval: 10000,
-            ride: "carousel",
+          interval: 10000,
+          ride: "carousel",
         });
         console.log("starting comment carousel...");
-        }
+      }
     }
-}, []);
+  }, []);
 
   return (
     <div className="container mt-5">

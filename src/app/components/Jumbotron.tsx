@@ -1,18 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
+import * as bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Jumbotron() {
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const carouselElement = document.querySelector("#jumbotronCarousel");
+      const carouselElement = document.querySelector("#customerCommentCarousel");
       if (carouselElement) {
-        const bootstrap = require("bootstrap/dist/js/bootstrap.bundle.min.js");
         new bootstrap.Carousel(carouselElement, {
           interval: 10000,
           ride: "carousel",
         });
-        console.log("starting jumbo carousel...");
+        console.log("starting comment carousel...");
       }
     }
   }, []);
