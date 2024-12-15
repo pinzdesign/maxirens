@@ -4,18 +4,16 @@ import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 
 export default function CustomerComment() {
-  // State to check if we're on the client-side
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Only run this effect on the client-side
     if (typeof window !== "undefined") {
-      setIsClient(true); // Set state to true to render the component
+      setIsClient(true);
     }
   }, []);
 
   if (!isClient) {
-    return null; // Return nothing during SSR to avoid 'document is not defined'
+    return null;
   }
 
   return (

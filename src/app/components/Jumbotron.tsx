@@ -1,33 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react"; // Import useState and useEffect
-import { Carousel } from "react-bootstrap"; // Import Carousel from react-bootstrap
+import { useEffect, useState } from "react"; 
+import { Carousel } from "react-bootstrap";
 
 export default function Jumbotron() {
-  // State to check if we're on the client-side
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Ensure we are running this code only on the client-side
     if (typeof window !== "undefined") {
-      setIsClient(true); // Set to true after component is mounted on the client
+      setIsClient(true);
     }
   }, []);
 
   useEffect(() => {
-    // Only run this on the client-side after mounting
     if (isClient && window.bootstrap) {
       const carouselElement = document.querySelector("#jumbotronCarousel");
       if (carouselElement) {
-        // Initialize the Bootstrap carousel using the native Bootstrap JS
         const bootstrapCarousel = new window.bootstrap.Carousel(carouselElement);
-        bootstrapCarousel.cycle(); // Start the carousel automatically
+        bootstrapCarousel.cycle(); 
       }
     }
-  }, [isClient]); // This effect depends on the client-side state
+  }, [isClient]);
 
   if (!isClient) {
-    return null; // Return nothing during SSR to avoid 'document is not defined'
+    return null; 
   }
 
   return (

@@ -21,7 +21,7 @@ export default function Values() {
                     </div>
                     <div className="col-md-4">
                         <div className="valuesRight">
-                            <Image src="/images/suit.png" alt="suit" width={1046} height={698}></Image>
+                            <Image src="/images/suit.webp" alt="suit" width={1046} height={698}></Image>
                         </div>
                     </div>
                 </div>
