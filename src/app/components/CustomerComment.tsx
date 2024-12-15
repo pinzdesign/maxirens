@@ -1,20 +1,22 @@
 "use client";
 
-import { useEffect } from "react";
-import { Carousel } from "react-bootstrap"; // Import Carousel from react-bootstrap
+import { useEffect, useState } from "react";
+import { Carousel } from "react-bootstrap";
 
 export default function CustomerComment() {
+  // State to check if we're on the client-side
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    // Ensure we are running this code only on the client-side
-    if (typeof window !== "undefined" && window.bootstrap) {
-      const carouselElement = document.querySelector(".carousel");
-      if (carouselElement) {
-        // Initialize the Bootstrap carousel using the native Bootstrap JS
-        const bootstrapCarousel = new window.bootstrap.Carousel(carouselElement);
-        bootstrapCarousel.cycle(); // Start the carousel automatically
-      }
+    // Only run this effect on the client-side
+    if (typeof window !== "undefined") {
+      setIsClient(true); // Set state to true to render the component
     }
   }, []);
+
+  if (!isClient) {
+    return null; // Return nothing during SSR to avoid 'document is not defined'
+  }
 
   return (
     <div className="container mt-5">
