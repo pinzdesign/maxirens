@@ -3,7 +3,6 @@
 // selvom googlemaps er installeret i denne projekt så bliver den ikke brugt
 
 // ikke brugt
-import Googlemap from "./Googlemap";
 
 export default function WorkInfo() {
     return (
