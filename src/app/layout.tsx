@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: "Maxi Rens - en vaskeri i hjertet af København",
-  description: "Maxi Rens desc",
+  description: "Maxi Rens er en vaskeri af hjertet af København. Alt indenfor rens, vask og reparation af tøj.",
 };
 
 export default function RootLayout({
