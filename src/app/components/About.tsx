@@ -19,7 +19,7 @@ const App = () => {
 
     return (
         <IntroArticle 
-            imagePath="/images/cloth.png" 
+            imagePath="/images/cloth.webp" 
             imageAlt="tøj" 
             imageCircle={true} 
             content={content} 

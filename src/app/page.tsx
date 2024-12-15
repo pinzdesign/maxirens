@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <ServicePreview></ServicePreview>
       <IntroArticle 
-            imagePath="/images/maxirens.png" 
+            imagePath="/images/maxirens.webp" 
             imageAlt="tøj" 
             imageCircle={true} 
             content={content} 

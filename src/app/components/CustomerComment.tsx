@@ -59,10 +59,10 @@ useEffect(() => {
             </div>
           </div>
         </div>
-        <button className="carousel-control-prev" type="button" data-bs-target="#customerCommentCarousel" data-bs-slide="prev">
+        <button className="carousel-control-prev" type="button" data-bs-target="#customerCommentCarousel" data-bs-slide="prev" aria-label="Previous">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         </button>
-        <button className="carousel-control-next" type="button" data-bs-target="#customerCommentCarousel" data-bs-slide="next">
+        <button className="carousel-control-next" type="button" data-bs-target="#customerCommentCarousel" data-bs-slide="next" aria-label="Next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
         </button>
       </div>

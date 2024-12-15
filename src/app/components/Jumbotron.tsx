@@ -21,7 +21,7 @@ export default function Jumbotron() {
     <div id="jumbotronCarousel" className="jumbotron carousel slide carousel-fade" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <div className="jumbotron-slide" style={{ backgroundImage: 'url("/images/banner.png")'}}>
+          <div className="jumbotron-slide" style={{ backgroundImage: 'url("/images/banner1.webp")'}}>
             <h2 className="lead">Vi tilbyder professionel rens, vask og reparation af tøj.</h2>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default function Jumbotron() {
           </div>
         </div>
         <div className="carousel-item">
-          <div className="jumbotron-slide" style={{ backgroundImage: 'url("/images/banner3.png")'}}>
+          <div className="jumbotron-slide" style={{ backgroundImage: 'url("/images/banner3.webp")'}}>
             <h2 className="lead">Vi tilbyder professionel rens, vask og reparation af tøj.</h2>
           </div>
         </div>

@@ -55,7 +55,7 @@ export default function Home() {
     <>
       <ServicePreview />
       <IntroArticle
-        imagePath="/images/shirts.png"
+        imagePath="/images/shirts.webp"
         imageAlt="tøj"
         imageCircle={true}
         content={[
