@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect } from "react";
-// @ts-expect-error: bootstrap/dist/js/bootstrap.bundle.min.js lacks TypeScript definitions
+// @ts-expect-error: bootstrap lacks TypeScript definitions
 import * as bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function CustomerComment() {
 
   useEffect(() => {
+
     if (typeof window !== "undefined") {
       const carouselElement = document.querySelector("#customerCommentCarousel");
       if (carouselElement) {
@@ -17,7 +18,7 @@ export default function CustomerComment() {
         console.log("starting comment carousel...");
       }
     }
-  }, []);
+  }, []);  
 
   return (
     <div className="container mt-5">
