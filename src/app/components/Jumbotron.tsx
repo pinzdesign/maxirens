@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-// @ts-expect-error
+// @ts-expect-error: bootstrap/dist/js/bootstrap.bundle.min.js lacks TypeScript definitions
 import * as bootstrap from "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Jumbotron() {
