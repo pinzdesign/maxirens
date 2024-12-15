@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="da">
-      <body>
+      <body className={`${inter.className} ${drSugiyama.className} ${dellaRespira.className}`}>
         <header>
           <SiteHeader></SiteHeader>
         </header>
