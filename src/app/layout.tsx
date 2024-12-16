@@ -10,9 +10,9 @@ import "./globals.css";
 import SiteHeader from '@/app/components/SiteHeader';
 import SiteFooter from '@/app/components/SiteFooter';
 
-const drSugiyama = Dr_Sugiyama({ weight: '400', subsets: ['latin'] });
-const dellaRespira = Della_Respira({ weight: '400', subsets: ['latin'] });
-const inter = Inter({ weight: ['400', '700'], subsets: ['latin'] });
+const drSugiyama = Dr_Sugiyama({ subsets: ['latin'], weight: '400' });
+const dellaRespira = Della_Respira({ subsets: ['latin'], weight: '400' });
+const inter = Inter({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: "Maxi Rens - en vaskeri i hjertet af København",
