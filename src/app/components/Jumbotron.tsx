@@ -1,63 +1,54 @@
 "use client";
 
-import { useEffect, useState } from "react"; 
 import { Carousel } from "react-bootstrap";
+import Image from "next/image";
 
 export default function Jumbotron() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsClient(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (isClient && window.bootstrap) {
-      const carouselElement = document.querySelector("#jumbotronCarousel");
-      if (carouselElement) {
-        const bootstrapCarousel = new window.bootstrap.Carousel(carouselElement);
-        bootstrapCarousel.cycle(); 
-      }
-    }
-  }, [isClient]);
-
-  if (!isClient) {
-    return null; 
-  }
-
   return (
     <div
       id="jumbotronCarousel"
       className="jumbotron carousel slide carousel-fade"
       data-bs-ride="carousel"
     >
-      <Carousel interval={10000} controls>
+      <Carousel interval={10000} controls fade>
         <Carousel.Item>
-          <div
-            className="jumbotron-slide"
-            style={{ backgroundImage: 'url("/images/banner1.webp")' }}
-          >
+          <div className="jumbotron-slide">
+            <Image
+              src="/images/banner1.webp"
+              alt="Banner 1"
+              layout="responsive"
+              width={1200} // Adjust based on actual image dimensions
+              height={600} // Adjust based on actual image dimensions
+              priority // Preloads this image for better performance
+            />
             <h2 className="lead">
               Vi tilbyder professionel rens, vask og reparation af tøj.
             </h2>
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div
-            className="jumbotron-slide"
-            style={{ backgroundImage: 'url("/images/banner2.webp")' }}
-          >
+          <div className="jumbotron-slide">
+            <Image
+              src="/images/banner2.webp"
+              alt="Banner 2"
+              layout="responsive"
+              width={1200} // Adjust based on actual image dimensions
+              height={600} // Adjust based on actual image dimensions
+            />
             <h2 className="lead">
               Vi tilbyder professionel rens, vask og reparation af tøj.
             </h2>
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div
-            className="jumbotron-slide"
-            style={{ backgroundImage: 'url("/images/banner3.webp")' }}
-          >
+          <div className="jumbotron-slide">
+            <Image
+              src="/images/banner3.webp"
+              alt="Banner 3"
+              layout="responsive"
+              width={1200} // Adjust based on actual image dimensions
+              height={600} // Adjust based on actual image dimensions
+            />
             <h2 className="lead">
               Vi tilbyder professionel rens, vask og reparation af tøj.
             </h2>
