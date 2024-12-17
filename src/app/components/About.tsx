@@ -4,8 +4,8 @@ import IntroArticle from './IntroArticle';
 const App = () => {
     const content = [
         {
-            title: "Velkommen til Maxi Rens - din pålidelige partner for rensning, vask og reparation af tøj",
-            text: "Hos os tror vi på, at rent og velplejet tøj er en del af en nemmere og mere komfortabel hverdag. Derfor har vi skabt en service, hvor kvalitet, pålidelighed og bæredygtighed går hånd i hånd. Vi er her for at hjælpe dig med alt fra den daglige vask til skånsom rens af dine mest værdifulde tekstiler - og vi tilbyder også reparationer, så dit tøj kan holde længere."
+            title: "Velkommen til Maxi Rens",
+            text: "Velkommen til Maxi Rens på Istedgade i København. Maxi Rens ligger placeret i det hyggelige kvarter ved Istedgade som har fået et helt nyt image. Hele området har fået en byfornyelse og tilbyder i dag på et fantastisk hyggeligt og stemningsfyldt gademiljø, med masser af liv. Med få minutters gang fra Hovedbanegården, kan du komme ned og besøge Maxi Rens. Maxi Rens ved Istedgade i København vil naturligvis hjælpe dig med den optimale service. Derudover har de enkelte steder parkeringspladser langs vejen samt flere parkeringspladser på de små sidegader, hvilket gør det nemt og komfortabelt for jer som kunder. Kontakt Maxi Rens ved Istedgade eller kom ned forbi dem."
         },
         {
             title: "Hvem er vi?",
