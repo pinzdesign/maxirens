@@ -239,7 +239,7 @@ footer .container {
 
 /* misc */
 .jumbotron {
-  height: 75vh;
+  max-height: 75vh;
   background-image: url("/images/banner3.webp");
   color: white;
   background-position: center;
@@ -254,7 +254,7 @@ footer .container {
 }
 
 .jumbotron-slide {
-  height: 75vh;
+  max-height: 75vh;
   background-size: cover;
   background-position: center;
 }
